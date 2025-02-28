@@ -14,3 +14,4 @@
 
 from .naive import NaiveRewardManager
 from .prime import PrimeRewardManager
+from .custom_manager import RewardManager

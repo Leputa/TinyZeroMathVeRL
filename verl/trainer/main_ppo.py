@@ -35,7 +35,7 @@ def run_ppo(config, compute_score=None):
 
 @ray.remote(num_cpus=1)  # please make sure main_task is not scheduled on head
 def main_task(config, compute_score=None):
-    from verl.utils.fs import copy_to_local
+    from verl.utils.fs import copy_local_path_from_hdfs
     # print initial config
     from pprint import pprint
     from omegaconf import OmegaConf
@@ -43,7 +43,7 @@ def main_task(config, compute_score=None):
     OmegaConf.resolve(config)
 
     # download the checkpoint from hdfs
-    local_path = copy_to_local(config.actor_rollout_ref.model.path)
+    local_path = copy_local_path_from_hdfs(config.actor_rollout_ref.model.path)
 
     # instantiate tokenizer
     from verl.utils import hf_tokenizer
@@ -106,13 +106,21 @@ def main_task(config, compute_score=None):
     elif reward_manager_name == 'prime':
         from verl.workers.reward_manager import PrimeRewardManager
         reward_manager_cls = PrimeRewardManager
+    elif reward_manager_name == 'custom':
+        from verl.workers.reward_manager import RewardManager
+        reward_manager_cls = RewardManager
     else:
         raise NotImplementedError
-    reward_fn = reward_manager_cls(tokenizer=tokenizer, num_examine=0, compute_score=compute_score)
-
+    
+    if reward_manager_name != 'custom':
+        reward_fn = reward_manager_cls(tokenizer=tokenizer, num_examine=0, compute_score=compute_score)
+        val_reward_fn = reward_manager_cls(tokenizer=tokenizer, num_examine=1, compute_score=compute_score)
+    else:
+        reward_fn = reward_manager_cls(tokenizer=tokenizer, num_examine=0, reward_fn=config.reward_fn)
+        val_reward_fn = reward_manager_cls(tokenizer=tokenizer, num_examine=1, reward_fn='answer')   # validation只计算answer损失
+    
     # Note that we always use function-based RM for validation
-    val_reward_fn = reward_manager_cls(tokenizer=tokenizer, num_examine=1, compute_score=compute_score)
-
+    
     resource_pool_manager = ResourcePoolManager(resource_pool_spec=resource_pool_spec, mapping=mapping)
 
     trainer = RayPPOTrainer(config=config,
