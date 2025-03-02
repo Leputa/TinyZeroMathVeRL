@@ -22,6 +22,8 @@ bash main_grpo.sh
 
 ## Experimental Setup & Results
 
+### Experimental Setup
+
 **Prompt Design**: the prompt is same as DeepSeek-R1.
 ```bash
 System: You are a helpful assistant. The user asks a question, and the Assistant solves it. The assistant first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., <think> reasoning process here </think> <answer> answer here </answer>. 
@@ -41,14 +43,33 @@ User: {question}. Please reason step by step, and put your final answer within \
      * Correct Answer but Multiple \boxed{}: Reward +1.5.  
      * Incorrect Answer: Reward -2.  
     
-**Experimental Results**  
-   - **Qwen2.5-Instruct-1.5B, Answer Reward only**    
-   ![Answer Reward](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_1.5B_answer/answer_rewards.jpg) ![Response Length](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_1.5B_answer/response_length.jpg) ![Valid Answer Accuracy](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_1.5B_answer/valid_answer_accuracy.jpg)
-   - **Qwen2.5-Instruct-1.5B, Answer Reward and Format Reward**  
-   ![Answer Reward](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_1.5B_answer_format/answer_rewards.jpg) ![Format Reward](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_1.5B_answer_format/format_rewards.jpg) ![Response Length](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_1.5B_answer_format/response_length.jpg) ![Valid Answer Accuracy](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_1.5B_answer_format/valid_answer_accuracy.jpg)
-   - **Qwen2.5-7B-Instruct, Answer Reward only**   
-   ![Answer Reward](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_7B_answer/answer_rewards.jpg) ![Response Length](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_7B_answer/response_length.jpg) ![Valid Answer Accuracy](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_7B_answer/valid_answer_accuracy.jpg)
-   - **Qwen2.5-7B-Instruct, Answer Reward and Format Reward**  
-   ![Answer Reward](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_7B_answer_format/answer_rewards.jpg) ![Format Reward](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_7B_answer_format/format_rewards.jpg) ![Response Length](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_7B_answer_format/response_length.jpg) ![Valid Answer Accuracy](https://github.com/Leputa/TinyZeroMathVeRL/blob/main/pics/qwen_instruct_7B_answer_format/valid_answer_accuracy.jpg)
+### Experimental Results
+
+   - **Qwen2.5-Instruct-1.5B, Answer Reward only**  
+   
+   | ![Answer Reward](./pics/qwen_instruct_1.5B_answer/answer_rewards.jpg) | ![Response Length](./pics/qwen_instruct_1.5B_answer/response_length.jpg) | ![Valid Answer Accuracy](./pics/qwen_instruct_1.5B_answer/valid_answer_accuracy.jpg) |
+   |:---:|:---:|:---:|
+   | Answer Reward | Response Length | Valid Answer Accuracy |
+   
+   
+   - **Qwen2.5-1.5B-Instruct, Answer Reward and Format Reward**
+   
+   | ![Answer Reward](./pics/qwen_instruct_1.5B_answer_format/answer_rewards.jpg) | ![Format Reward](./pics/qwen_instruct_1.5B_answer_format/format_rewards.jpg) | ![Response Length](./pics/qwen_instruct_1.5B_answer_format/response_length.jpg) | ![Valid Answer Accuracy](./pics/qwen_instruct_1.5B_answer_format/valid_answer_accuracy.jpg) |
+   |:---:|:---:|:---:|:---:|
+   | Answer Reward | Format Reward | Response Length | Valid Answer Accuracy |
+
+   - **Qwen2.5-7B-Instruct, Answer Reward only**
+   
+   | ![Answer Reward](./pics/qwen_instruct_7B_answer/answer_rewards.jpg) | ![Response Length](./pics/qwen_instruct_7B_answer/response_length.jpg) | ![Valid Answer Accuracy](./pics/qwen_instruct_7B_answer/valid_answer_accuracy.jpg) |
+   |:---:|:---:|:---:|
+   | Answer Reward | Response Length | Valid Answer Accuracy |
+
+   - **Qwen2.5-7B-Instruct, Answer Reward and Format Reward** 
+     
+   | ![Answer Reward](./pics/qwen_instruct_7B_answer_format/answer_rewards.jpg) | ![Format Reward](./pics/qwen_instruct_7B_answer_format/format_rewards.jpg) | ![Response Length](./pics/qwen_instruct_7B_answer_format/response_length.jpg) | ![Valid Answer Accuracy](./pics/qwen_instruct_7B_answer_format/valid_answer_accuracy.jpg) |
+   |:---:|:---:|:---:|:---:|
+   | Answer Reward | Format Reward | Response Length | Valid Answer Accuracy |
+     
+
 
      
