@@ -43,9 +43,9 @@ User: {question}. Please reason step by step, and put your final answer within \
     
 **Experimental Results**  
    - **Qwen2.5-1.5B-Instruct, Answer Reward only**    
-   ![Answer Reward](pics/qwen_instruct_1.5B_answer/answer_rewards.jpg) ![Response Length](pics/qwen_instruct_1.5B_answer/response_length.jpg) ![Valid Answer Accuracy](pics/qwen_instruct_1.5B_answer/valid_answer_accuracy.jpg)
-   - **Qwen2.5-7B-Instruct, Answer Reward and Format Reward**  
-   ![Image1](path/to/image1.png) ![Image2](path/to/image2.png) ![Image3](path/to/image3.png) ![Image4](path/to/image4.png)
+   ![Answer Reward](./pics/qwen_instruct_1.5B_answer/answer_rewards.jpg) ![Response Length](./pics/qwen_instruct_1.5B_answer/response_length.jpg) ![Valid Answer Accuracy](./pics/qwen_instruct_1.5B_answer/valid_answer_accuracy.jpg)
+   - **Qwen2.5-1.5B-Instruct, Answer Reward and Format Reward**  
+   ![Answer Reward](pics/qwen_instruct_1.5B_answer_format/answer_rewards.jpg) ![Format Reward](pics/qwen_instruct_1.5B_answer_format/format_rewards.jpg) ![Response Length](pics/qwen_instruct_1.5B_answer_format/response_length.jpg) ![Valid Answer Accuracy](pics/qwen_instruct_1.5B_answer_format/valid_answer_accuracy.jpg)
    - **Qwen2.5-1.5B-Instruct, Answer Reward only**  
    ![Image1](path/to/image1.png) ![Image2](path/to/image2.png) ![Image3](path/to/image3.png) 
    - **Qwen2.5-1.5B-Instruct, Answer Reward and Format Reward**  
