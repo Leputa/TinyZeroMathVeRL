@@ -32,23 +32,23 @@ User: {question}. Please reason step by step, and put your final answer within \
 
 **Reward Settings**  
    - **Format Reward** 
-     * Follow Format: Reward +0.1 (It is very easy to learn) .
+     * Follow Format: Reward +0.1 (easy to learn) .
      * Not Follow Format: Reward -1.
      * Format judgment is implemented based on [Logic-RL](https://github.com/Unakar/Logic-RL). 
      
    - **Answer Reward**:  
-     * Correct Answer with strict Format: Reward +2.  
-     * Correct Answer without strict Format (e.g., response multiple candidate answers): Reward +1.5.  
+     * Correct Answer: Reward +2.  
+     * Correct Answer but Multiple \boxed{}: Reward +1.5.  
      * Incorrect Answer: Reward -2.  
     
 **Experimental Results**  
-   - **Qwen2.5-7B-Instruct, Answer Reward only**   
-   ![Image1](path/to/image1.png) ![Image2](path/to/image2.png) ![Image3](path/to/image3.png)
+   - **Qwen2.5-1.5B-Instruct, Answer Reward only**    
+   ![Answer Reward](pics/qwen_instruct_1.5B_answer/answer_rewards.jpg) ![Response Length](pics/qwen_instruct_1.5B_answer/response_length.jpg) ![Valid Answer Accuracy](pics/qwen_instruct_1.5B_answer/valid_answer_accuracy.jpg)
    - **Qwen2.5-7B-Instruct, Answer Reward and Format Reward**  
    ![Image1](path/to/image1.png) ![Image2](path/to/image2.png) ![Image3](path/to/image3.png) ![Image4](path/to/image4.png)
    - **Qwen2.5-1.5B-Instruct, Answer Reward only**  
    ![Image1](path/to/image1.png) ![Image2](path/to/image2.png) ![Image3](path/to/image3.png) 
-   - **Qwen2.5-1.5B-Instruct, Answer Reward and Format Reward**
+   - **Qwen2.5-1.5B-Instruct, Answer Reward and Format Reward**  
    ![Image1](path/to/image1.png) ![Image2](path/to/image2.png) ![Image3](path/to/image3.png) ![Image4](path/to/image4.png)
 
      
